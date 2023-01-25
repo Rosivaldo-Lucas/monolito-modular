@@ -17,18 +17,24 @@ public class AddProduct {
     public AddProductOutputDto execute(final AddProductInputDto addProductInputDto) {
         final Product product = this.convertProductInputDtoToProduct(addProductInputDto);
 
+        final String r = "teste".replace("t", "u");
+
         this.productRepository.add(product);
 
-        return this.convertProductToProductOutputDto(product);
+        final AddProductOutputDto productOutputDto = this.convertProductToProductOutputDto(product);
+
+        return productOutputDto;
     }
 
     private Product convertProductInputDtoToProduct(final AddProductInputDto addProductInputDto) {
-        return new Product(
+        final Product product = new Product(
                 addProductInputDto.getName(),
                 addProductInputDto.getDescription(),
                 addProductInputDto.getPurchasePrice(),
                 addProductInputDto.getStock()
         );
+
+        return product;
     }
 
     private AddProductOutputDto convertProductToProductOutputDto(final Product product) {
