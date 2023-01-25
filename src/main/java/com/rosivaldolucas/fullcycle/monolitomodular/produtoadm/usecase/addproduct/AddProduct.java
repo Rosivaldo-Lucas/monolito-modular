@@ -19,9 +19,7 @@ public class AddProduct {
 
         this.productRepository.add(product);
 
-        final AddProductOutputDto productOutputDto = this.convertProductToProductOutputDto(product);
-
-        return productOutputDto;
+        return this.convertProductToProductOutputDto(product);
     }
 
     private Product convertProductInputDtoToProduct(final AddProductInputDto addProductInputDto) {
