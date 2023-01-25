@@ -19,20 +19,16 @@ public class AddProduct {
 
         this.productRepository.add(product);
 
-        final AddProductOutputDto productOutputDto = this.convertProductToProductOutputDto(product);
-
-        return productOutputDto;
+        return this.convertProductToProductOutputDto(product);
     }
 
     private Product convertProductInputDtoToProduct(final AddProductInputDto addProductInputDto) {
-        final Product product = new Product(
+        return new Product(
                 addProductInputDto.getName(),
                 addProductInputDto.getDescription(),
                 addProductInputDto.getPurchasePrice(),
                 addProductInputDto.getStock()
         );
-
-        return product;
     }
 
     private AddProductOutputDto convertProductToProductOutputDto(final Product product) {
