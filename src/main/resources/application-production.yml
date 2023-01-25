@@ -1,0 +1,12 @@
+postgresql:
+  username: ${DATABASE_POSTGRESQL_USERNAME:monolitomodular}
+  password: ${DATABASE_POSTGRESQL_PASSWORD:root}
+  schema: ${DATABASE_POSTGRESQL_SCHEMA:monolitomodular}
+  host: ${DATABASE_POSTGRESQL_HOST:localhost}
+  port: ${DATABASE_POSTGRESQL_PORT:5432}
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none

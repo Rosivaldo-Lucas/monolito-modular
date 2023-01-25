@@ -1,0 +1,6 @@
+postgresql:
+  username: monolitomodular
+  password: root
+  schema: monolitomodular
+  host: localhost
+  port: 5432

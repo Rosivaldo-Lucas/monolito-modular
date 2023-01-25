@@ -6,11 +6,12 @@ import java.time.LocalDateTime;
 
 public class BaseEntity {
 
-    private IdValueObject id;
+    private final IdValueObject id;
     private final LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    private BaseEntity() {
+    public BaseEntity() {
+        this.id = new IdValueObject();
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }

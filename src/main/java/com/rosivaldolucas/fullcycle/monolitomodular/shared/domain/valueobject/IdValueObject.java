@@ -4,9 +4,11 @@ import java.util.UUID;
 
 public class IdValueObject implements ValueObjectInterface {
 
-    private String id;
+    private final String id;
 
-    public IdValueObject() { }
+    public IdValueObject() {
+        this.id = UUID.randomUUID().toString();
+    }
 
     public IdValueObject(final String id) {
         this.id = id.equals("") ? UUID.randomUUID().toString() : id;
