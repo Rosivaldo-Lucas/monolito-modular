@@ -17,8 +17,6 @@ public class AddProduct {
     public AddProductOutputDto execute(final AddProductInputDto addProductInputDto) {
         final Product product = this.convertProductInputDtoToProduct(addProductInputDto);
 
-        final String r = "teste".replace("t", "u");
-
         this.productRepository.add(product);
 
         final AddProductOutputDto productOutputDto = this.convertProductToProductOutputDto(product);
